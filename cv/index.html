@@ -1,0 +1,49 @@
+---
+title: Curriculum vitae
+eyebrow: CV
+---
+{% assign cv = site.data.cv %}
+<div class="sections">
+  <section class="stack col">
+    <p class="lede">{{ cv.summary }}</p>
+    <div class="cv-actions">
+      {% if site.cv_pdf %}<a class="btn" href="{{ '/assets/cv.pdf' | relative_url }}" download="Subaiba_Kadakkadan_CV.pdf">Download CV (PDF)</a>{% endif %}
+      <a class="btn" href="{{ '/skills/' | relative_url }}">Skills</a>
+      <a class="btn" href="#contact">Contact</a>
+    </div>
+  </section>
+
+  {% assign blocks = "research,experience,education,training,engagement" | split: "," %}
+  {% for key in blocks %}
+  {% assign rows = cv[key] %}
+  {% if rows and rows.size > 0 %}
+  <section class="col">
+    <div class="sec-head"><h2>{{ cv.titles[key] }}</h2></div>
+    <div class="entries">
+      {% for r in rows %}
+      <div class="entry">
+        <div class="when">{{ r.when }}</div>
+        <div>
+          <h3>{{ r.role }}</h3>
+          {% if r.org != "" and r.org %}<p class="sub">{{ r.org }}</p>{% endif %}
+          {% if r.detail != "" and r.detail %}<p class="desc">{{ r.detail }}</p>{% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+  {% endfor %}
+
+  <section class="col">
+    <div class="sec-head"><h2>Publications</h2></div>
+    {% include publications.html %}
+  </section>
+
+  <section class="col">
+    <div class="sec-head"><h2>Referees</h2></div>
+    <p>{{ cv.referees }}</p>
+  </section>
+
+  {% include contact.html %}
+</div>

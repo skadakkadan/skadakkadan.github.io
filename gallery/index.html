@@ -1,0 +1,43 @@
+---
+title: Gallery
+eyebrow: Field and lab
+intro: Fieldwork, laboratory methods, research events and figures. Images are shared with permission and never show patient or confidential laboratory information.
+---
+{%- assign photos = site.data.gallery.photos -%}
+{%- assign projects = site.projects | sort: "order" -%}
+{%- assign cats = "" | split: "" -%}
+{%- assign total = 0 -%}
+{%- if photos -%}{%- assign cats = photos | map: "category" | compact -%}{%- assign total = photos.size -%}{%- endif -%}
+{%- if site.data.msc_photos -%}
+  {%- assign one = "MSc research" | split: "|" -%}
+  {%- assign cats = cats | concat: one -%}
+  {%- assign n = site.data.msc_photos | size -%}
+  {%- assign total = total | plus: n -%}
+{%- endif -%}
+{%- for p in projects -%}
+  {%- if p.photos and p.photos.size > 0 -%}
+    {%- assign one = p.gallery_label | split: "|" -%}
+    {%- assign cats = cats | concat: one -%}
+    {%- assign n = p.photos | size -%}
+    {%- assign total = total | plus: n -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign cats = cats | uniq | sort -%}
+{% if total > 0 %}
+<div class="filters" data-filter-scope>
+  {% if cats.size > 1 %}
+  <div class="filter-row" role="group" aria-label="Filter by category">
+    <button type="button" aria-pressed="true" data-tag="">All</button>
+    {% for c in cats %}<button type="button" aria-pressed="false" data-tag="{{ c | slugify }}">{{ c }}</button>{% endfor %}
+  </div>
+  {% endif %}
+</div>
+<div class="grid" data-list>
+  {% if photos %}{% include photo-tiles.html photos=photos %}{% endif %}
+  {% if site.data.msc_photos %}{% include photo-tiles.html photos=site.data.msc_photos category="MSc research" %}{% endif %}
+  {% for p in projects %}{% if p.photos and p.photos.size > 0 %}{% include photo-tiles.html photos=p.photos category=p.gallery_label %}{% endif %}{% endfor %}
+</div>
+{% include lightbox.html %}
+{% else %}
+<div class="empty"><strong>No photos yet</strong>Add images to <span class="mono">assets/gallery/</span> and list them in <span class="mono">_data/gallery.yml</span> or in a project's page.</div>
+{% endif %}

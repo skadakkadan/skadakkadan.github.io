@@ -1,0 +1,46 @@
+---
+title: Reading notes
+eyebrow: Papers I've read
+intro: Reading critically and thinking experimentally. For each paper, what it claims, how well the evidence supports it, and what I would test next.
+---
+{% assign notes = site.notes | sort: "date" | reverse %}
+<details class="col" style="margin-bottom:28px">
+  <summary class="label" style="cursor:pointer">How I grade evidence</summary>
+  <div class="entries compact" style="margin-top:12px">
+    <div class="entry"><div class="when">{% include grade.html level="strong" %}</div><div><p class="desc">Claim follows directly from well-controlled data, ideally confirmed by an independent method.</p></div></div>
+    <div class="entry"><div class="when">{% include grade.html level="moderate" %}</div><div><p class="desc">Data support the claim, but a key control, replicate or orthogonal method is missing.</p></div></div>
+    <div class="entry"><div class="when">{% include grade.html level="weak" %}</div><div><p class="desc">Claim goes beyond the data, or relies on correlation where causation is stated.</p></div></div>
+    <div class="entry"><div class="when">{% include grade.html level="preliminary" %}</div><div><p class="desc">Interesting but early: preprint, small n, or a single experiment.</p></div></div>
+  </div>
+</details>
+
+{% if notes.size > 0 %}
+{%- assign all_tags = "" | split: "" -%}
+{%- for n in notes -%}{%- if n.field -%}{%- assign all_tags = all_tags | concat: n.field -%}{%- endif -%}{%- endfor -%}
+{%- assign all_tags = all_tags | uniq | sort -%}
+<div class="filters col" data-filter-scope>
+  <input class="search" type="search" id="notes-search" placeholder="Search by title, author or journal" aria-label="Search reading notes" data-search>
+  {% if all_tags.size > 0 %}
+  <div class="filter-row" role="group" aria-label="Filter by topic">
+    <button type="button" aria-pressed="true" data-tag="">All topics</button>
+    {% for t in all_tags %}<button type="button" aria-pressed="false" data-tag="{{ t | slugify }}">{{ t }}</button>{% endfor %}
+  </div>
+  {% endif %}
+  <span class="count" data-count></span>
+</div>
+<div class="entries col" data-list>
+  {% for n in notes %}
+  <div class="entry" data-item data-tags="{% for t in n.field %}{{ t | slugify }} {% endfor %}" data-text="{{ n.title | downcase | escape }} {{ n.authors | downcase | escape }} {{ n.journal | downcase | escape }}">
+    <div class="when">{{ n.date | date: "%-d %b %Y" }}</div>
+    <div>
+      <h3><a href="{{ n.url | relative_url }}">{{ n.title }}</a></h3>
+      <p class="sub">{{ n.authors }}{% if n.year %} · {{ n.year }}{% endif %}{% if n.journal %} · <em>{{ n.journal }}</em>{% endif %}</p>
+      {% if n.takeaway %}<p class="desc">{{ n.takeaway }}</p>{% endif %}
+      <div class="chips">{% include grade.html level=n.evidence %}{% for t in n.field %}<span class="chip">{{ t }}</span>{% endfor %}</div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<div class="empty"><strong>No reading notes yet</strong>Notes appear here once they are added to the <span class="mono">_notes</span> folder.</div>
+{% endif %}

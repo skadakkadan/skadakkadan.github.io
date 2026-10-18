@@ -1,0 +1,34 @@
+---
+title: Blog
+eyebrow: Writing
+intro: Longer thoughts on research, methods and working in science.
+---
+{% if site.posts.size > 0 %}
+{%- assign all_tags = "" | split: "" -%}
+{%- for post in site.posts -%}{%- assign all_tags = all_tags | concat: post.tags -%}{%- endfor -%}
+{%- assign all_tags = all_tags | uniq | sort -%}
+<div class="filters col" data-filter-scope>
+  <input class="search" type="search" id="blog-search" placeholder="Search posts" aria-label="Search posts" data-search>
+  {% if all_tags.size > 0 %}
+  <div class="filter-row" role="group" aria-label="Filter by tag">
+    <button type="button" aria-pressed="true" data-tag="">All</button>
+    {% for t in all_tags %}<button type="button" aria-pressed="false" data-tag="{{ t | slugify }}">{{ t }}</button>{% endfor %}
+  </div>
+  {% endif %}
+  <span class="count" data-count></span>
+</div>
+<div class="entries col" data-list>
+  {% for post in site.posts %}
+  <div class="entry" data-item data-tags="{% for t in post.tags %}{{ t | slugify }} {% endfor %}" data-text="{{ post.title | downcase | escape }} {{ post.excerpt | strip_html | downcase | escape }}">
+    <div class="when">{{ post.date | date: "%-d %b %Y" }}</div>
+    <div>
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+      <p class="desc">{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
+      {% if post.tags.size > 0 %}<div class="chips">{% for t in post.tags %}<span class="chip">{{ t }}</span>{% endfor %}</div>{% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<div class="empty"><strong>No posts yet</strong>The first post will appear here once it is added to the <span class="mono">_posts</span> folder.</div>
+{% endif %}

@@ -1,0 +1,18 @@
+---
+title: Skills
+eyebrow: Methods and techniques
+intro: Techniques I have used, with where I used them.
+---
+<div class="skill-groups">
+  {% for g in site.data.skills %}
+  <section>
+    <h2><span class="swatch" style="background:var(--{{ g.colour | default: 'core' }})"></span>{{ g.group }}</h2>
+    <span class="label">{{ g.skills.size }} skills</span>
+    <ul class="skill-list">
+      {% for s in g.skills %}
+      <li><div class="name">{{ s.name }}</div>{% if s.context %}<div class="ctx">{{ s.context }}</div>{% endif %}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endfor %}
+</div>
