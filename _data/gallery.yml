@@ -1,0 +1,111 @@
+# Gallery photos. Upload images to assets/gallery/ then add an entry under the photos list (newest first).
+# Keep each image under about 500 KB (resize to ~1600 px wide).
+# category: any word, e.g. Marine microbiology, Fieldwork, Laboratory, Events, Talks and outreach
+# Never upload anything showing patient data, sample labels or NHS systems.
+# Project photos go in the project's own file in _projects/ and appear here automatically.
+
+photos:
+  - file: msc-graduation-westminster.jpg
+    caption: MSc Applied Biotechnology graduation, University of Westminster
+    alt: Subaiba in graduation gown and cap, holding a certificate
+    category: Milestones
+  - file: msc-graduation-southbank.jpg
+    caption: Graduation day, MSc Applied Biotechnology
+    alt: Subaiba in graduation gown and cap standing in an exhibition corner about the Festival of Britain
+    category: Milestones
+  - file: westminster-employability-celebration-2023.jpg
+    caption: University of Westminster employability awards celebration, 2023, opened by the Vice-Chancellor
+    alt: Audience at round tables in a hall with a stained-glass window, facing a screen reading Please welcome our Vice Chancellor
+    category: Events
+    date: 2023-10-03
+  - file: psmo-nss-unit-secretary-2020.jpg
+    caption: "NSS Unit Secretary, PSMO College, 2020–21 (college newsletter Esencia)"
+    alt: College newsletter panel for the National Service Scheme 2020–2021 showing programme officers and four unit secretaries, including Subaiba Shafi K.K, S4 BSc Zoology
+    category: Leadership
+  - file: psmo-lecture-2024.jpg
+    caption: "Delivering the invited lecture on international careers for Zoology graduates, PSMO College"
+    alt: Subaiba speaking at a podium beside a projected lecture poster, with faculty seated at a panel table
+    category: Talks and outreach
+    date: 2024-03-01
+  - file: psmo-lecture-audience-2024.jpg
+    caption: Zoology students at the lecture and interactive session, PSMO College
+    alt: A seminar hall full of smiling students facing the speaker
+    category: Talks and outreach
+    date: 2024-03-01
+  - file: psmo-merit-award-day-2024.jpg
+    caption: Speaking at the Department of Zoology Merit Award Day, PSMO College
+    alt: Subaiba speaking at a podium in front of a projected Merit Award Day 2024 slide, with faculty seated alongside
+    category: Talks and outreach
+    date: 2024-03-01
+  - file: talk-psmo-college-2024.jpg
+    caption: "Invited lecture: International career opportunities for Zoology graduates, PSMO College, Tirurangadi"
+    alt: Event poster announcing a lecture by Subaiba Shafi KK for the Department of Zoology, PSMO College
+    category: Talks and outreach
+    date: 2024-03-01
+  - file: oxford-ctm-certificate.jpg
+    caption: Clinical Trial Management Crash Course, Primary Care Clinical Trials Unit, University of Oxford
+    alt: Certificate of attendance for Subaiba Kadakkadan, Clinical Trial Management Crash Course, 14 to 16 October 2025
+    category: Training
+    date: 2025-10-16
+  - file: oxford-ctm-course-session.jpg
+    caption: A session on working instructions during the Oxford clinical trial management course
+    alt: Course participants at desks facing a slide titled Why do we need Working Instructions, under stained-glass windows
+    category: Training
+    date: 2025-10-15
+  - file: oxford-life-and-mind-building.jpg
+    caption: At the University of Oxford Life and Mind Building during the course
+    alt: Subaiba standing outside a modern building with Department of Biology and Experimental Psychology banners
+    category: Training
+    date: 2025-10-14
+  - file: westminster-life-sciences-networking-2023.jpg
+    caption: Life Sciences Networking Event, University of Westminster (Cavendish campus)
+    alt: Audience facing a four-person panel in front of a screen reading Life Sciences Networking Event, 5 April 2023
+    category: Events
+    date: 2023-04-05
+  - file: ento-swallowtail.jpg
+    caption: "Swallowtail butterfly (Papilionidae) basking on a moss-covered wall"
+    alt: Black and white swallowtail with spotted hindwings, wings open on mossy rock among ferns
+    category: Entomology
+  - file: ento-skipper.jpg
+    caption: "Skipper (Hesperiidae) on a grass blade"
+    alt: Dark brown skipper with white spots, wings open on a green grass blade
+    category: Entomology
+  - file: ento-pierrot.jpg
+    caption: "Pierrot (Lycaenidae) on a leaf"
+    alt: Small black and white spotted butterfly with thin tails, wings closed on a leaf
+    category: Entomology
+  - file: ento-lycaenid-puddling.jpg
+    caption: "Blue (Lycaenidae) mud-puddling on a stony path"
+    alt: Small grey-brown butterfly with a tornal eyespot, wings closed on wet stones
+    category: Entomology
+  - file: ento-micronia.jpg
+    caption: "Uraniid swallowtail moth (Uraniidae)"
+    alt: White moth with grey streaks and small tails with dark spots, wings spread flat
+    category: Entomology
+  - file: ento-lichen-moth.jpg
+    caption: "Lichen moth (Erebidae: Arctiinae)"
+    alt: Orange moth with black zigzag bands resting on a white wall
+    category: Entomology
+  - file: ento-crambid-moth.jpg
+    caption: "Crambid moth (Crambidae)"
+    alt: White moth with brown bands and stripes resting on a wall
+    category: Entomology
+  - file: ento-geometrid-moth.jpg
+    caption: "Geometrid moth (Geometridae)"
+    alt: Brown speckled moth with wings spread on a wall
+    category: Entomology
+  - file: ento-erebid-moth.jpg
+    caption: "Noctuoid moth (Noctuoidea) among low vegetation"
+    alt: Triangular pale brown moth resting among leaves
+    category: Entomology
+  - file: ento-grasshopper.jpg
+    caption: "Grasshopper (Acrididae) camouflaged on laterite soil"
+    alt: Mottled brown and green grasshopper resting on reddish soil and rock
+    category: Entomology
+# Waiting for permission from your employer before publishing:
+#  - file: tecan-liquid-handler.jpg
+#    caption: Tecan automated liquid handler      # EDIT: where, and what it is used for
+#    category: Laboratory
+#  - file: nhs-lab-blurred.jpg
+#    caption: Clinical Blood Sciences laboratory, St George's
+#    category: Laboratory

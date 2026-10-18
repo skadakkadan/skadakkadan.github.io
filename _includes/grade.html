@@ -1,0 +1,4 @@
+{%- assign g = include.level | default: "" | downcase -%}
+{%- if g != "" -%}
+<span class="grade {{ g }}" title="My view of the strength of evidence"><span class="cells"><i></i><i></i><i></i><i></i></span>{{ g }} evidence</span>
+{%- endif -%}

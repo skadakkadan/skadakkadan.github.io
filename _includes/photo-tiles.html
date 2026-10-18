@@ -1,0 +1,10 @@
+{%- for ph in include.photos -%}
+{%- assign src = ph.file | prepend: '/assets/gallery/' | relative_url -%}
+{%- assign cat = include.category | default: ph.category -%}
+<figure class="tile" data-item data-tags="{{ cat | slugify }}">
+  <button type="button" data-lightbox="{{ src }}" data-caption="{{ ph.caption | escape }}" aria-label="Open image: {{ ph.caption | escape }}">
+    <img src="{{ src }}" alt="{{ ph.alt | default: ph.caption | escape }}" loading="lazy">
+  </button>
+  <figcaption>{{ ph.caption }}<span class="label">{% if cat %}{{ cat }}{% endif %}{% if ph.date %} · {{ ph.date | date: "%b %Y" }}{% endif %}</span></figcaption>
+</figure>
+{%- endfor -%}

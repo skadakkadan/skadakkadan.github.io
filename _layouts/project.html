@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<article class="article project-page">
+  <header class="article-head">
+    <a class="label" href="{{ '/research/' | relative_url }}#other-projects">← Research</a>
+    <span class="label">{{ page.org }}</span>
+    <h1>{{ page.title }}</h1>
+    <div class="meta">
+      <span>{{ page.when }}</span>
+      {% if page.role %}<span>{{ page.role }}</span>{% endif %}
+    </div>
+    {% if page.summary %}<p class="lede">{{ page.summary }}</p>{% endif %}
+    {% if page.tags.size > 0 %}<div class="chips">{% for t in page.tags %}<span class="chip">{{ t }}</span>{% endfor %}</div>{% endif %}
+    {% if page.link != "" and page.link %}<p><a class="btn" href="{{ page.link }}" target="_blank" rel="noopener">{{ page.link_label | default: "Project website" }} ↗</a></p>{% endif %}
+  </header>
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  <section class="project-photos">
+    <h2>Photos</h2>
+    {% if page.photos and page.photos.size > 0 %}
+    <div class="grid">
+      {% include photo-tiles.html photos=page.photos category=page.gallery_label %}
+    </div>
+    {% include lightbox.html %}
+    {% else %}
+    <div class="empty"><strong>Photos coming soon</strong>Images from this project will appear here and in the Gallery.</div>
+    {% endif %}
+  </section>
+
+  <nav class="pager" aria-label="More projects">
+    <div>{% if page.previous %}<span class="label">Previous project</span><br><a href="{{ page.previous.url | relative_url }}">{{ page.previous.title }}</a>{% endif %}</div>
+    <div class="next">{% if page.next %}<span class="label">Next project</span><br><a href="{{ page.next.url | relative_url }}">{{ page.next.title }}</a>{% endif %}</div>
+  </nav>
+</article>

@@ -1,0 +1,25 @@
+# Newest first. type: Article | Working paper | Preprint | MSc thesis
+# doi: just the DOI (no https://doi.org/). url: a link, used only when there is no DOI.
+- year: 2025
+  type: Working paper
+  title: CRISPR-based detection of microbial DNA integration in autoimmune inflammation
+  authors: Barker H. et al., incl. Kadakkadan S.
+  venue: SSRN Working Paper Series
+  doi: "10.2139/ssrn.5249169"
+  url: ""
+
+- year: 2023
+  type: Article
+  title: Conservation of native tree species in the agroforest of rice-based agroecosystems will contribute to sustainable agriculture
+  authors: Lopus M. et al., incl. Shafi S.
+  venue: Biodiversity and Conservation (Springer)
+  doi: "10.1007/s10531-023-02738-0"
+  url: ""
+
+- year: 2023
+  type: MSc thesis
+  title: "Marine sediment-derived Bacillus strains: promising antifungal agents with chitinase-induced activity"
+  authors: Kadakkadan S.
+  venue: University of Westminster, MSc Applied Biotechnology
+  doi: ""
+  url: ""

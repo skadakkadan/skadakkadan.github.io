@@ -1,0 +1,12 @@
+# Current work shown on the home page. status: In preparation | In progress | Submitted | Under review | Published
+- title: Chitin-dependent antifungal activity in marine sediment-derived <em>Bacillus</em>
+  kind: Manuscript
+  status: In preparation
+  with: With Dr Linda Percy, University of Westminster    # EDIT: remove this line if Dr Percy has not agreed to be named
+  summary: Writing up the MSc finding that chitin supplementation is associated with antifungal activity against Candida albicans.
+
+- title: NRPS gene clusters and resistance genes in marine <em>Bacillus</em> genomes
+  kind: Computational
+  status: In progress
+  summary: Comparative genomics asking whether non-ribosomal peptide clusters co-occur with resistance genes and mobile elements, and how often such co-occurrence is more than chance.
+  tools: [antiSMASH, CARD / RGI, MobileElementFinder, clinker]

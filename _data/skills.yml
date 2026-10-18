@@ -1,0 +1,59 @@
+# Skills page. "context" says where you used each skill; leave it "" if you'd rather not say.
+# Only list what you could discuss in detail at interview.
+- group: Microbiology
+  colour: core
+  skills:
+    - name: Isolation and cultivation of environmental bacteria
+      context: More than 35 marine sediment isolates (MSc).
+    - name: Antimicrobial activity and susceptibility testing
+      context: Agar diffusion against Candida albicans and Pseudomonas aeruginosa (MSc).
+    - name: Fermentation and bioprocess optimisation
+      context: Bacterial cellulose from food waste with Komagataeibacter xylinus (Cavendish Living Lab); stirred-tank bioreactors, bench to pilot scale.
+
+- group: Molecular and cell biology
+  colour: transport
+  skills:
+    - name: PCR
+      context: PCR for NRPS-associated sequences (MSc project).
+    - name: qPCR, electrophoresis, cloning, Western blotting and CRISPR-Cas9
+      context: Training through Gene Editors of the Future (practical, 2023) and Gene Editors of the Future 2.0 (online, 2022–23), University of Westminster.
+    - name: Enzyme assays
+      context: Colorimetric chitinase assay (MSc).
+    - name: Mammalian cell culture and viability
+      context: VERO cells, MTT assay of culture supernatants (MSc).
+    - name: Recombinant protein expression and purification
+      context: Working exposure.
+
+- group: Analytical chemistry
+  colour: tailor
+  skills:
+    - name: HPLC and LC-MS/MS
+      context: Clinical biochemistry at St George's, including assays for steroids, aldosterone and renin, and HVA.
+
+- group: Computational biology and data
+  colour: mint
+  skills:
+    - name: Genome mining and annotation
+      context: antiSMASH, BLAST, CARD / RGI, MobileElementFinder, clinker.
+    - name: Protein structure and design
+      context: AlphaFold, PyRosetta; LifeLab and OpenPETase protein engineering (2025).
+    - name: Statistics and programming
+      context: R (biodiversity analysis at MSSRF; NLP in Health Using R, Edinburgh 2025), Python, SPSS.
+    - name: Data reporting and lab software
+      context: Power BI, Tableau, Excel, Benchling.
+
+- group: Clinical laboratory and quality
+  colour: reg
+  skills:
+    - name: High-throughput clinical analysers
+      context: QC, calibration and maintenance on Cobas 8000, Sebia CAPILLARYS, Beckman DxI, DxA and DxH, and Tosoh.
+    - name: Quality systems
+      context: UKAS ISO 15189 and MHRA standards, SOP compliance, audit preparation, staff training.
+    - name: Laboratory and clinical information systems
+      context: WinPath, Horizon, iClip, Apex, EMIS.
+    - name: Clinical research support
+      context: NIHR study sample processing; clinical-trial assays with Analytical Services International.
+    - name: Clinical trial management
+      context: Clinical Trial Management Crash Course, Primary Care Clinical Trials Unit, University of Oxford (October 2025).
+    - name: Point-of-care testing
+      context: Capillary blood glucose, urinalysis, urine hCG.

@@ -1,0 +1,106 @@
+# Everything on the CV page comes from this file. Newest first in each list.
+
+summary: >-
+  Applied Biotechnology MSc (Distinction) working in NHS Clinical Blood Sciences. My interests
+  connect environmental microbiology, natural-product discovery, microbial genomics and
+  antimicrobial resistance. I came to molecular biotechnology from zoology and field ecology,
+  and I am most interested in questions that link an ecological observation to its molecular mechanism.
+
+titles:
+  research: Research experience
+  experience: Professional experience
+  education: Education
+  training: Training and certification
+  engagement: Outreach and volunteering
+
+research:
+  - when: May – Oct 2023
+    role: Biopolymer Scientist Intern
+    org: Cavendish Living Lab (bioplastics strand), University of Westminster, London
+    detail: Bacterial cellulose from food-waste substrates with Komagataeibacter xylinus (5% yield increase); work on polyhydroxyalkanoates; sustainability projects combining hydroponics and microbial biofilms. Exhibited bacterial cellulose materials at the Cavendish Living Lab Symposium 2023.
+  - when: Jun – Aug 2023
+    role: Postgraduate Researcher
+    org: University of Westminster, London
+    detail: Screened more than 35 marine sediment isolates against Candida albicans and Pseudomonas aeruginosa; culture optimisation, enzyme assays and genome analysis with antiSMASH.
+  - when: Feb – Jul 2021
+    role: Research Intern
+    org: M. S. Swaminathan Research Foundation, Wayanad, India
+    detail: Biodiversity surveys across nine agroforestry sites (128 plant and 101 bird species) and statistical analysis in R. Co-author of the resulting Biodiversity and Conservation paper.
+
+experience:
+  - when: Apr 2024 – present
+    role: Advanced Biomedical Support Worker, Clinical Blood Sciences
+    org: South West London Pathology, St George's University Hospitals NHS Foundation Trust
+    detail: UKAS ISO 15189-accredited laboratory handling over 9,000 samples a day. HPLC and LC-MS/MS work including steroid, aldosterone and renin, and HVA assays. QC, calibration and maintenance on Cobas 8000, Sebia CAPILLARYS, Beckman DxI, DxA and DxH, and Tosoh analysers. Compliance checks and staff training. Sample processing for NIHR studies and clinical-trial assays with Analytical Services International.
+  - when: Nov 2022 – Mar 2024
+    role: Healthcare Support Worker
+    org: Mildmay Mission Hospital, London
+    detail: "Patient care, specimen handling and point-of-care testing (capillary blood glucose, urinalysis, urine hCG); clinical data entry in EMIS."
+  - when: Mar 2021 – Aug 2023
+    role: Assistant Business Analyst (remote)
+    org: National Hatcheries Pvt. Ltd., Kerala, India
+    detail: Logistics and supply-chain data analysis, Excel and Power BI dashboards, FSSAI and animal-husbandry compliance documentation, ERP digitisation for traceability.
+
+education:
+  - when: 2022 – 2023
+    role: MSc Applied Biotechnology · Distinction
+    org: University of Westminster, London
+    detail: "Best MSc Thesis Award 2023; top 5% of cohort; Westminster Employability Award – Gold (October 2023). Thesis: Marine sediment-derived Bacillus strains: promising antifungal agents with chitinase-induced activity. Supervisor: Dr Linda Percy."
+  - when: 2018 – 2021
+    role: BSc Zoology · First Class with Distinction
+    org: PSMO College, Tirurangadi (University of Calicut), India
+    detail: "Research project: diversity of butterfly fauna in Malappuram District. Top 5% of graduating class; SIB Scholar full scholarship (2019–2021)."
+
+training:
+  - when: Oct 2025
+    role: Clinical Trial Management Crash Course
+    org: Primary Care Clinical Trials Unit, Nuffield Department of Primary Care Health Sciences, University of Oxford
+    detail: Three-day in-person course, 14–16 October 2025.
+  - when: Sep 2025
+    role: Cambridge Head and Neck Cancer Symposium (attendance)
+    org: CRUK Cambridge Centre Thoracic Cancer Programme, with the University of Cambridge
+    detail: 25 September 2025. 5 category 1 CPD credits, Federation of the Royal Colleges of Physicians of the UK.
+  - when: "2025"
+    role: Natural Language Processing with R (online course, NIHR-funded)
+    org: NHS-R Community and University of Edinburgh
+    detail: Selected for the first joint NHS-R Community and University of Edinburgh course.
+  - when: "2025"
+    role: LifeLab and OpenPETase protein engineering
+    org: London
+    detail: ""
+  - when: Oct 2022 – Jan 2023
+    role: Gene Editors of the Future 2.0
+    org: Genome Engineering Laboratory, University of Westminster
+    detail: Online research and training on the basics of CRISPR/Cas9 human genome engineering.
+  - when: "2023"
+    role: Gene Editors of the Future, CRISPR-Cas9 (practical)
+    org: Genomics laboratory, University of Westminster
+    detail: ""
+  - when: Certificate
+    role: Good Manufacturing Practice (GMP)
+    org: ""
+    detail: ""
+
+engagement:
+  - when: 2020 – 2021
+    role: Unit Secretary, National Service Scheme (NSS)
+    org: PSMO College, Tirurangadi, India
+    detail: One of four student unit secretaries for NSS Units 26 and 74, during the COVID-19 lockdown year.
+  - when: "2023"
+    role: Poster presentation and public engagement, Genetics Society outreach programme
+    org: Royal Institution, London
+    detail: Represented the Gene Editors of the Future programme.
+  - when: Mar 2024
+    role: "Invited lecture: International career opportunities for Zoology graduates"
+    org: Department of Zoology, PSMO College, Tirurangadi, India
+    detail: Lecture and interactive session for undergraduate students.
+  - when: Volunteer
+    role: Volunteer researcher, Zoological Society of London and Zooniverse
+    org: Emergent Insect Explorer
+    detail: Ecological data logging and species identification.
+  - when: Outreach
+    role: Mentoring and community education
+    org: Kerala, India
+    detail: Guiding rural students towards research careers in biotechnology and ecology; literacy and outreach programmes (Aksharasamudram, e-Nilambur).
+
+referees: Available on request.

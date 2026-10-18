@@ -1,0 +1,40 @@
+{%- assign px = include.prefix | default: "p" -%}
+<nav class="plate-wrap" aria-label="Site sections">
+<svg class="plate" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="{{ px }}-lawn" width="11" height="11" patternUnits="userSpaceOnUse">
+      <rect width="11" height="11" style="fill:var(--lawn)"/>
+      <circle cx="2.5" cy="3" r="1.6" style="fill:var(--lawn-dot)"/>
+      <circle cx="8" cy="7.5" r="1.3" style="fill:var(--lawn-dot)"/>
+      <circle cx="4.5" cy="9.6" r="0.9" style="fill:var(--lawn-dot)"/>
+    </pattern>
+    <radialGradient id="{{ px }}-zone">
+      <stop offset="0" style="stop-color:var(--agar-clear)"/>
+      <stop offset="0.84" style="stop-color:var(--agar-clear)"/>
+      <stop offset="1" style="stop-color:var(--agar-clear);stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  <circle class="dish" cx="300" cy="300" r="296"/>
+  <circle cx="300" cy="300" r="276" style="fill:url(#{{ px }}-lawn)"/>
+  <g class="plate-mark" transform="rotate(-6 300 300)">
+    <text x="300" y="288">MH agar</text>
+    <text x="300" y="308">35 °C · 18 h</text>
+    <text x="300" y="328">S. Kadakkadan</text>
+  </g>
+  {%- for link in site.data.navigation -%}
+    {%- assign current = false -%}
+    {%- if link.url == '/' -%}
+      {%- if page.url == '/' or page.url == '/index.html' -%}{%- assign current = true -%}{%- endif -%}
+    {%- elsif page.url contains link.url -%}
+      {%- assign current = true -%}
+    {%- endif %}
+  <a class="disc-link" href="{{ link.url | relative_url }}" aria-label="{{ link.title }}" data-title="{{ link.title }}"{% if current %} aria-current="page"{% endif %} style="--d:{{ forloop.index0 }}">
+    <circle class="zone" cx="{{ link.cx }}" cy="{{ link.cy }}" r="{{ link.zone }}" style="fill:url(#{{ px }}-zone)"/>
+    <circle class="disc" cx="{{ link.cx }}" cy="{{ link.cy }}" r="25"/>
+    <text class="disc-code" x="{{ link.cx }}" y="{{ link.cy | minus: 1 }}">{{ link.code }}</text>
+    <text class="disc-pot" x="{{ link.cx }}" y="{{ link.cy | plus: 12 }}">{{ link.potency }}</text>
+    <text class="disc-label" x="{{ link.cx }}" y="{{ link.cy | plus: 54 }}">{{ link.title }}</text>
+  </a>
+  {%- endfor %}
+</svg>
+</nav>

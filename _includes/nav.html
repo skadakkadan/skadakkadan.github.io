@@ -1,0 +1,32 @@
+<header class="site-head">
+  <a class="brand" href="{{ '/' | relative_url }}">{{ site.author.name }}</a>
+  <nav class="nav" aria-label="Main">
+    {%- for link in site.data.navigation -%}
+      {%- assign current = false -%}
+      {%- if link.url == '/' -%}
+        {%- if page.url == '/' or page.url == '/index.html' -%}{%- assign current = true -%}{%- endif -%}
+      {%- elsif page.url contains link.url -%}
+        {%- assign current = true -%}
+      {%- endif %}
+    <a href="{{ link.url | relative_url }}"{% if current %} aria-current="page"{% endif %}>{{ link.title }}</a>
+    {%- endfor %}
+  </nav>
+  <button class="theme-btn plate-btn" type="button" id="plate-btn" aria-haspopup="dialog" aria-controls="plate-menu">
+    <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><circle cx="10" cy="10" r="9" style="fill:var(--lawn);stroke:var(--dish-rim)"/><circle cx="10" cy="5" r="2.2" style="fill:var(--disc)"/><circle cx="14.5" cy="12.5" r="2.2" style="fill:var(--disc)"/><circle cx="5.5" cy="12.5" r="2.2" style="fill:var(--disc)"/></svg>
+    Sections
+  </button>
+  <button class="theme-btn" type="button" id="theme-toggle" aria-label="Switch colour theme">Theme</button>
+</header>
+<dialog class="plate-menu" id="plate-menu" aria-label="Site sections">
+  <div class="plate-menu-bar">
+    <span class="label">Choose a disc</span>
+    <button class="theme-btn" type="button" id="plate-close">Close</button>
+  </div>
+  {% include plate.html prefix="m" %}
+  <nav class="plate-menu-list" aria-label="Sections as a list">
+    <a href="{{ '/' | relative_url }}" data-title="Home">Home</a>
+    {%- for link in site.data.navigation %}
+    <a href="{{ link.url | relative_url }}">{{ link.title }}</a>
+    {%- endfor %}
+  </nav>
+</dialog>

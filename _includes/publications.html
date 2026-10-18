@@ -1,0 +1,12 @@
+<div class="entries">
+  {% for pub in site.data.publications %}
+  <div class="entry">
+    <div class="when">{{ pub.year }} · {{ pub.type }}</div>
+    <div>
+      <h3>{% if pub.doi != "" and pub.doi %}<a href="https://doi.org/{{ pub.doi }}">{{ pub.title }}</a>{% elsif pub.url != "" and pub.url %}<a href="{{ pub.url }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</h3>
+      <p class="sub">{{ pub.authors }} · <em>{{ pub.venue }}</em></p>
+      {% if pub.doi != "" and pub.doi %}<p class="sub mono" style="font-size:.8rem"><a href="https://doi.org/{{ pub.doi }}">doi:{{ pub.doi }}</a></p>{% elsif pub.url != "" and pub.url %}<p class="sub mono" style="font-size:.8rem"><a href="{{ pub.url }}">Read the paper ↗</a></p>{% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>

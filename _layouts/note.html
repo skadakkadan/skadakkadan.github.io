@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<article class="article">
+  <header class="article-head">
+    <a class="label" href="{{ '/reading/' | relative_url }}">← Reading notes</a>
+    <h1>{{ page.title }}</h1>
+    <div class="meta">
+      <span>Read <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time></span>
+      {% include grade.html level=page.evidence %}
+    </div>
+    <div class="citation">
+      <span class="label">Paper</span>
+      <p class="ref">{{ page.authors }}{% if page.year %} ({{ page.year }}){% endif %}. {{ page.title }}.{% if page.journal %} <em>{{ page.journal }}</em>.{% endif %}</p>
+      {% if page.doi %}<p class="mono" style="font-size:.85rem"><a href="https://doi.org/{{ page.doi }}">doi:{{ page.doi }}</a></p>{% endif %}
+      {% if page.field.size > 0 %}<div class="chips">{% for t in page.field %}<span class="chip">{{ t }}</span>{% endfor %}</div>{% endif %}
+    </div>
+    {% if page.takeaway %}<p class="takeaway">{{ page.takeaway }}</p>{% endif %}
+  </header>
+  <div class="prose">
+    {{ content }}
+  </div>
+  <nav class="pager" aria-label="More reading notes">
+    <div>{% if page.previous %}<span class="label">Earlier</span><br><a href="{{ page.previous.url | relative_url }}">{{ page.previous.title }}</a>{% endif %}</div>
+    <div class="next">{% if page.next %}<span class="label">Later</span><br><a href="{{ page.next.url | relative_url }}">{{ page.next.title }}</a>{% endif %}</div>
+  </nav>
+</article>

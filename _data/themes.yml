@@ -1,0 +1,24 @@
+# Research interests shown on the Research page. Edit freely.
+- short: Ecological induction
+  question: Can environmental cues reveal antimicrobial activity that standard laboratory conditions miss?
+  body:
+    - Microbial genomes carry biosynthetic gene clusters for many specialised metabolites, but genetic potential does not always become detectable activity in standard culture. I am interested in using biologically relevant signals, such as chitin, to change what microorganisms make.
+    - Comparative cultivation, metabolomics, transcriptomics, genome mining and bioactivity-guided fractionation could connect a specific stimulus to a specific antimicrobial product.
+
+- short: Gene clusters and genomes
+  question: What can the organisation of a genome reveal about microbial chemistry and survival?
+  body:
+    - Tools such as antiSMASH predict pathways for non-ribosomal peptides, polyketides and other metabolites. I am particularly interested in genomic context, meaning the neighbouring genes, how clusters are distributed across related organisms, and possible links to self-protection or resistance.
+  caution: A resistance-associated gene next to a cluster does not show that the cluster makes an antibiotic, or that the gene protects against its product. That link needs experimental evidence.
+
+- short: Resistance in the environment
+  question: How do environmental microbial communities help resistance persist and move?
+  body:
+    - Rivers, sediments and wastewater-influenced ecosystems receive resistant organisms, antimicrobial residues and resistance genes from many sources. Environmental sampling, cultivation, metagenomics and resistance-gene profiling can show where resistance occurs and what sustains it.
+  caution: Finding similar resistance genes in two environments does not by itself show transmission between them. That needs sampling controls, source attribution and genomic context.
+
+- short: Antibiotic potentiation
+  question: Could environmental microorganisms supply molecules that make existing antibiotics work better?
+  body:
+    - A new antibiotic is not the only route against resistance. Microbial metabolites may change antibiotic susceptibility, interfere with resistance mechanisms or act synergistically with established drugs, which matters most for resistant Gram-negative bacteria.
+  caution: This requires separating intrinsic activity, genuine potentiation, nonspecific toxicity and assay artefacts.

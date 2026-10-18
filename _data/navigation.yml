@@ -1,0 +1,46 @@
+# Site sections. These drive the text menu and the susceptibility-plate menu.
+# code/potency: printed on the disc, like a real antibiotic disc (e.g. AMP 10).
+# zone: radius of the inhibition zone drawn round the disc.
+# cx/cy: disc position on the plate (centre is 300,300). No need to change.
+- title: Research
+  url: /research/
+  code: RES
+  potency: "30"
+  zone: 82
+  cx: 300
+  cy: 128
+- title: Blog
+  url: /blog/
+  code: BLG
+  potency: "10"
+  zone: 70
+  cx: 449
+  cy: 214
+- title: Reading notes
+  url: /reading/
+  code: RDN
+  potency: "30"
+  zone: 88
+  cx: 449
+  cy: 386
+- title: Gallery
+  url: /gallery/
+  code: GAL
+  potency: "5"
+  zone: 64
+  cx: 300
+  cy: 472
+- title: CV
+  url: /cv/
+  code: CV
+  potency: "15"
+  zone: 76
+  cx: 151
+  cy: 386
+- title: Skills
+  url: /skills/
+  code: SKL
+  potency: "20"
+  zone: 72
+  cx: 151
+  cy: 214

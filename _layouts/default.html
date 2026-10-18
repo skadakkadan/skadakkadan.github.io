@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en-GB' }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% seo %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,500..700,0..100,0..1;1,9..144,500..700,0..100,0..1&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+{% feed_meta %}
+<script>
+  (function () {
+    var d = document.documentElement;
+    try { var t = localStorage.getItem('theme'); if (t === 'dark' || t === 'light') d.setAttribute('data-theme', t); } catch (e) {}
+    try {
+      if (sessionStorage.getItem('walk')) {
+        sessionStorage.removeItem('walk');
+        if (!matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('arriving');
+      }
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body{% if site.walk_transition == false %} data-no-walk{% endif %}>
+<canvas id="bg" aria-hidden="true"></canvas>
+{% include nav.html %}
+<main>
+{{ content }}
+</main>
+{% include footer.html %}
+{% include walker.html %}
+<script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+</body>
+</html>
