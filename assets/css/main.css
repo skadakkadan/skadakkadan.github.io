@@ -295,10 +295,15 @@ sup a{text-decoration:none}
 .film .scene{opacity:0;visibility:hidden;transition:opacity .45s ease,visibility 0s .45s}
 .film .scene.on{opacity:1;visibility:visible;transition:opacity .45s ease}
 .film .scene *{transform-box:fill-box;transform-origin:center}
-.film-big{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--f-mono);font-size:.9rem;letter-spacing:.06em;text-transform:uppercase;
-  background:var(--ink);color:var(--bg);border:0;padding:12px 22px;cursor:pointer;box-shadow:0 8px 24px var(--shadow)}
-.film-big:hover{background:var(--core)}
-.film.started .film-big{display:none}
+.film-poster{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:16px;
+  background:color-mix(in srgb,var(--surface) 84%,transparent);backdrop-filter:blur(2px)}
+.film-kicker{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--core);margin:0}
+.film-title{font-family:var(--f-display);font-weight:600;font-size:clamp(1.25rem,3.6vw,2.1rem);line-height:1.15;margin:0;max-width:18em;color:var(--ink)}
+.film-sub{font-family:var(--f-mono);font-size:.74rem;color:var(--muted);margin:0 0 10px}
+.film-big{font-family:var(--f-mono);font-size:.9rem;letter-spacing:.06em;text-transform:uppercase;
+  background:var(--core);color:#fff;border:0;padding:12px 26px;cursor:pointer;box-shadow:0 8px 24px var(--shadow);border-radius:999px}
+.film-big:hover{background:var(--ink);color:var(--bg)}
+.film.started .film-poster{display:none}
 .film-bar{height:3px;background:var(--line)}
 .film-bar i{display:block;height:100%;width:0;background:var(--mint)}
 .film-controls{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
@@ -308,61 +313,108 @@ sup a{text-decoration:none}
 .film-chapters button:hover{color:var(--ink);border-color:var(--ink)}
 .film-chapters button[aria-current="step"]{background:var(--mint-soft);color:var(--mint-ink);border-color:var(--mint)}
 .film-cap{font-size:1rem;min-height:3.2em}
-.f-water{fill:var(--film-water)} .f-wave{fill:none;stroke:var(--film-wave);stroke-width:3}
+.f-step{font-family:var(--f-mono);font-size:18px;letter-spacing:.14em;fill:var(--core);font-weight:600}
+.f-h{font-family:var(--f-display);font-weight:600;font-size:34px;fill:var(--ink)}
+.f-sea1{stop-color:var(--film-water)} .f-sea2{stop-color:var(--film-wave)}
+.f-wave{fill:none;stroke:var(--surface);stroke-opacity:.5;stroke-width:3}
 .f-sed{fill:var(--film-sed)} .f-grain{fill:var(--film-grain)}
+.f-bubble{fill:none;stroke:var(--surface);stroke-width:1.5;opacity:.8}
+.f-card{fill:var(--bg);stroke:var(--line);stroke-width:1.5;filter:drop-shadow(0 6px 14px var(--shadow))}
+.f-streak{fill:none;stroke:var(--film-pellet);stroke-width:2;stroke-linecap:round;opacity:.55}
 .f-glass{fill:var(--film-glass);stroke:var(--ink);stroke-width:2}
 .f-glass-o{fill:none;stroke:var(--ink);stroke-width:2.5;stroke-linejoin:round}
 .f-cap{fill:var(--mint);stroke:var(--ink);stroke-width:1.5}
 .f-medium{fill:var(--film-medium)} .f-turbid{fill:var(--film-turbid)}
 .f-turbid.clear{opacity:0}
+.f-rod{fill:var(--core);opacity:.8}
 .f-dish{fill:var(--dish-fill);stroke:var(--dish-rim);stroke-width:3}
 .f-agar{fill:var(--film-agar)}
 .f-colA{fill:var(--colony-a);stroke:var(--film-pellet);stroke-width:1.5} .f-colB{fill:var(--colony-b);stroke:var(--film-pellet);stroke-width:1}
-.f-arrow{fill:none;stroke:var(--muted);stroke-width:2.5;stroke-dasharray:6 6;stroke-linecap:round}
+.f-arrow{fill:none;stroke:var(--muted);stroke-width:2.5;stroke-dasharray:7 6;stroke-linecap:round}
 .f-bench{fill:var(--surface)}
 .f-plat{fill:var(--line)} .f-plat2{fill:var(--surface-2)}
 .f-chitin{fill:var(--chitin);stroke:var(--ink);stroke-width:1}
 .f-pellet{fill:var(--film-pellet)}
-.f-spin{fill:none;stroke:var(--core);stroke-width:3;stroke-linecap:round}
+.f-rotor-b{fill:var(--surface-2);stroke:var(--line);stroke-width:3}
+.f-rotor{fill:var(--dish-fill);stroke:var(--ink);stroke-width:2}
+.f-slot{fill:var(--film-medium);stroke:var(--ink);stroke-width:1.5}
+.f-pip{fill:var(--surface-2);stroke:var(--ink);stroke-width:2} .f-pip-tip{fill:var(--film-glass);stroke:var(--ink);stroke-width:1.5}
+.f-lawn-bg{fill:var(--lawn)} .f-lawn-dot{fill:var(--lawn-dot)}
+.f-zone{fill:var(--agar-clear);fill-opacity:.55;stroke:var(--lawn-dot);stroke-width:2}
+.f-zone-s{fill:var(--agar-clear);fill-opacity:.6}
 .f-well{fill:var(--film-agar);stroke:var(--ink);stroke-width:1.5}
+.f-drop{fill:var(--film-medium);stroke:var(--ink);stroke-width:1}
+.f-measure{fill:none;stroke:var(--res);stroke-width:2.5;stroke-linecap:round}
 .f-chitinase{fill:var(--chitinase)}
+.f-instr{fill:var(--surface-2);stroke:var(--ink);stroke-width:2}
+.f-beam{stroke:var(--res);stroke-width:3;stroke-dasharray:10 8;fill:none}
+.f-screen{fill:var(--ink)} .f-screen-t{fill:var(--mint)}
 .f-well2{fill:var(--film-glass);stroke:var(--dish-rim);stroke-width:1}
-.f-formazan{fill:var(--formazan);opacity:.72}
+.f-formazan{fill:var(--formazan);opacity:.75}
+.f-lens{fill:var(--dish-fill);stroke:var(--ink);stroke-width:2.5}
+.f-cell{fill:var(--mint-soft);stroke:var(--cilia);stroke-width:1.5} .f-nuc{fill:var(--cilia);opacity:.55}
+.f-mtt{fill:#e8c840} .f-form-dot{fill:var(--formazan)}
 .f-bgc{fill:var(--core)}
+.f-scan{fill:var(--mint);fill-opacity:.35;stroke:var(--core);stroke-width:2}
 .f-zoom{fill:none;stroke:var(--muted);stroke-width:1.5;stroke-dasharray:4 4}
 .f-g1{fill:var(--core)} .f-g2{fill:var(--reg)} .f-g3{fill:var(--tailor)}
 .f-dna{stroke:var(--ink);stroke-width:3} .f-rung{stroke:var(--muted);stroke-width:2}
 .f-primer{fill:none;stroke:var(--res);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+.f-amp{fill:var(--res);opacity:.85}
 .f-box1{fill:var(--mint-soft);stroke:var(--core);stroke-width:2} .f-box2{fill:none;stroke:var(--muted);stroke-width:2;stroke-dasharray:8 6}
-.f-t{fill:var(--ink);font-family:var(--f-mono);font-size:22px}
+.f-t{fill:var(--ink);font-family:var(--f-mono);font-size:24px}
 .f-i{font-style:italic;font-family:var(--f-body)}
-.f-small{font-size:20px} .f-tiny{font-size:12px;fill:var(--muted)}
+.f-small{font-size:21px} .f-tiny{font-size:17px;fill:var(--muted)}
 .f-lab{font-size:16px;letter-spacing:.12em;fill:var(--mint-ink)}
-.f-big{font-family:var(--f-display);font-weight:700;font-size:34px}
+.f-big{font-family:var(--f-display);font-weight:700;font-size:36px}
 .f-mid{font-family:var(--f-display);font-weight:500;font-size:28px}
 .f-q{font-family:var(--f-display);font-weight:700;font-size:90px;fill:var(--muted)}
-.scene.play .drop{animation:f-drop 1.6s cubic-bezier(.3,.7,.3,1) backwards}
+/* one-shot animations, restarted each time a scene plays */
+.scene.play .drop{animation:f-drop 1.4s cubic-bezier(.3,.7,.3,1) backwards}
 .scene.play .pop{animation:f-pop .6s cubic-bezier(.3,1.5,.5,1) backwards}
 .scene.play .fade{animation:f-fade .9s ease backwards}
 .scene.play .fall{animation:f-fall 1.1s cubic-bezier(.5,0,.8,.6) backwards}
-.scene.play .shake{animation:f-shake .3s ease-in-out 8 alternate}
-.scene.play .clear{animation:f-clear 2.2s ease .3s backwards}
-.scene.play .grow{animation:f-grow 2.6s cubic-bezier(.2,.7,.2,1) backwards}
+.scene.play .clear{animation:f-clear 1.6s ease backwards}
+.scene.play .grow{animation:f-grow 2.2s cubic-bezier(.2,.7,.2,1) backwards}
 .scene.play .sweep{transform-origin:left center;animation:f-sweep .9s ease backwards}
-.scene.play .spin{animation:f-spin 1.6s cubic-bezier(.4,0,.6,1) backwards}
+.scene.play .spin{animation:f-spin 2.2s cubic-bezier(.4,0,.5,1) backwards}
 .scene.play .bind-l{animation:f-bind-l 1.3s ease backwards}
 .scene.play .bind-r{animation:f-bind-r 1.3s ease backwards}
-@keyframes f-drop{from{transform:translateY(-300px)}}
+.scene.play .draw{stroke-dasharray:600;animation:f-draw 1.2s ease backwards}
+.scene.play .drip{animation:f-drip 1s cubic-bezier(.5,0,.9,.5) backwards}
+.scene.play .pipette{animation:f-pipette 1.4s ease-in-out backwards}
+.scene.play .fill-up{transform-origin:bottom center;animation:f-fill 1.2s ease backwards}
+.scene.play .colour{animation:f-colour 1.6s ease backwards}
+.colour{opacity:var(--op)}
+.drip{opacity:0}
+/* gentle continuous motion while a scene is on screen */
+.film .scene.on .lp-rise{animation:f-rise 4.5s linear infinite}
+.film .scene.on .lp-drift{animation:f-driftx 6s ease-in-out infinite alternate}
+.film .scene.on .lp-orbit{animation:f-orbit .9s linear infinite}
+.film .scene.on .lp-flow{animation:f-flow .8s linear infinite}
+.film .scene.on .lp-scan{animation:f-scan 3.4s ease-in-out infinite alternate}
+.film .scene.on .lp-pulse{animation:f-pulse 1.8s ease-in-out infinite}
+@keyframes f-drop{from{transform:translateY(-320px)}}
 @keyframes f-pop{from{transform:scale(0)}}
 @keyframes f-fade{from{opacity:0}}
 @keyframes f-fall{from{transform:translateY(-190px);opacity:0}}
-@keyframes f-shake{from{transform:translateX(-7px)}to{transform:translateX(7px)}}
 @keyframes f-clear{from{opacity:1}to{opacity:0}}
-@keyframes f-grow{from{transform:scale(.12)}}
+@keyframes f-grow{from{transform:scale(.1);opacity:0}}
 @keyframes f-sweep{from{transform:scaleX(0)}}
-@keyframes f-spin{from{transform:rotate(-900deg)}}
+@keyframes f-spin{from{transform:rotate(-1080deg)}}
 @keyframes f-bind-l{from{transform:translateX(-160px);opacity:0}}
 @keyframes f-bind-r{from{transform:translateX(160px);opacity:0}}
+@keyframes f-draw{from{stroke-dashoffset:600}to{stroke-dashoffset:0}}
+@keyframes f-drip{0%{transform:translateY(-40px);opacity:0}15%{opacity:1}85%{opacity:1}100%{transform:translateY(130px);opacity:0}}
+@keyframes f-pipette{0%{transform:translate(-210px,100px)}40%{transform:translate(-210px,130px)}100%{transform:translate(0,0)}}
+@keyframes f-fill{from{transform:scaleY(0)}}
+@keyframes f-colour{from{opacity:0}to{opacity:var(--op)}}
+@keyframes f-rise{from{transform:translateY(0);opacity:0}15%{opacity:.9}to{transform:translateY(-280px);opacity:0}}
+@keyframes f-driftx{from{transform:translateX(-20px)}to{transform:translateX(20px)}}
+@keyframes f-orbit{0%{transform:translate(4px,0)}25%{transform:translate(0,3px)}50%{transform:translate(-4px,0)}75%{transform:translate(0,-3px)}100%{transform:translate(4px,0)}}
+@keyframes f-flow{to{stroke-dashoffset:-18}}
+@keyframes f-scan{from{transform:translateX(0)}to{transform:translateX(606px)}}
+@keyframes f-pulse{50%{transform:scale(1.35);opacity:.55}}
 .film.paused .scene *{animation-play-state:paused}
 @media (prefers-reduced-motion:reduce){.film .scene *{animation:none!important}}
 

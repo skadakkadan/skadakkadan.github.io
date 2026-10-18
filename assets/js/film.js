@@ -5,7 +5,7 @@
   var toggle = film.querySelector('[data-toggle]'), big = film.querySelector('[data-play]');
   var chapters = Array.prototype.slice.call(film.querySelectorAll('[data-go]'));
   var reduce = false; try { reduce = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
-  var DUR = 6200, i = 0, elapsed = 0, t0 = 0, playing = false, ended = false;
+  var DUR = 7000, i = 0, elapsed = 0, t0 = 0, playing = false, ended = false;
 
   // Optional voice-over: one clip per scene at <data-audio>scene-N.<ext>
   var voiceBtn = film.querySelector('[data-voice]'), base = film.getAttribute('data-audio');
