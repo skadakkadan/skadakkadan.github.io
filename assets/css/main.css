@@ -40,7 +40,7 @@
   --chitin:#e0d8c6; --chitinase:#e0a046; --formazan:#a77fe0; --film-pellet:#c9b27c; color-scheme:dark}
 
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
+html{-webkit-text-size-adjust:100%;overflow-x:clip}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.65;padding:0 20px}
 img{max-width:100%;height:auto;display:block}
 [hidden]{display:none!important}
@@ -209,6 +209,15 @@ main{max-width:var(--wide);margin:0 auto;padding-block:48px 72px}
 .hero-plate{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,500px);gap:32px 48px;align-items:center}
 .hero-plate .hero{min-width:0}
 @media (max-width:860px){.hero-plate{grid-template-columns:1fr}}
+/* faded full-width photo behind the home-page hero */
+.hero-plate{position:relative;isolation:isolate;padding-block:40px}
+.hero-plate::before{content:"";position:absolute;z-index:-1;top:-48px;bottom:0;left:50%;width:100vw;transform:translateX(-50%);
+  background:linear-gradient(90deg,var(--bg) 0%,color-mix(in srgb,var(--bg) 55%,transparent) 28%,transparent 48%) 0 0/100% 100% no-repeat,
+    url("../gallery/public-engagement-stand-westminster.jpg") 90% 37%/max(125%,900px) auto no-repeat;
+  opacity:.34;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 14%,#000 72%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 14%,#000 72%,transparent 100%)}
+:root[data-theme="dark"] .hero-plate::before{opacity:.22}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hero-plate::before{opacity:.22}}
+@media (max-width:860px){.hero-plate::before{background-size:100% 100%,cover;background-position:0 0,58% 30%;opacity:.26}}
 .plate-wrap{width:100%;max-width:500px;margin-inline:auto}
 .plate{width:100%;height:auto;display:block;overflow:visible;filter:drop-shadow(0 12px 26px var(--shadow))}
 .plate .dish{fill:var(--dish-fill);stroke:var(--dish-rim);stroke-width:3}
