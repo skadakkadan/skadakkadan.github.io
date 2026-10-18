@@ -1,91 +1,102 @@
 ---
-layout: default
-title: Home
+title: From environmental signals to antimicrobial function
+eyebrow: Research
+intro: My interests connect three questions. What are microorganisms genetically capable of producing? Which environmental conditions change what they actually make? And how might that chemistry help us understand, or counter, antimicrobial resistance?
 ---
 <div class="sections">
 
-<section class="hero-plate">
-  <div class="hero">
-    <span class="label">Environmental microbiology · Antimicrobial discovery · Microbial genomics</span>
-    <h1>{{ site.author.name }}</h1>
-    <p class="role">I am interested in how microbial environments shape antimicrobial activity, biosynthetic potential and the emergence of resistance.</p>
-    <p class="caption">Each disc on the plate opens a section of the site.</p>
+<section class="col" id="msc-project">
+  <div class="sec-head"><h2>Featured project</h2></div>
+  <div class="stack">
+    <h3 class="proj-title">Condition-dependent antifungal activity in marine sediment-derived bacteria</h3>
+    <p class="sub muted">MSc Applied Biotechnology · University of Westminster · 2023</p>
+    <p>The project began by screening more than 35 marine sediment isolates against <em>Candida albicans</em> and <em>Pseudomonas aeruginosa</em>. I then studied two isolates in depth, <em>Bacillus altitudinis</em> and <em>Bacillus hwajinpoensis</em><sup><a href="#fn-taxon" id="ref-taxon">1</a></sup>, against <em>C. albicans</em> NCPF 3179. The question was whether adding chitin to the culture medium changes extracellular antifungal activity, and whether chitinolytic activity or predicted secondary-metabolite pathways could explain it.</p>
   </div>
-  {% include plate.html prefix="h" %}
-</section>
 
-<section class="stack col" id="about">
-  <h2>Some microbial chemistry only appears when the environment changes</h2>
-  <p class="lede">A nutrient runs short, a competitor appears, a new substrate arrives. Microorganisms respond by changing their metabolism and switching on quiet pathways, and molecules appear that standard culture would never show.</p>
-  <p>I hold an MSc in Applied Biotechnology (Distinction) from the University of Westminster and work in NHS Clinical Blood Sciences. My MSc research tested whether chitin changes the antifungal activity of marine sediment-derived bacteria against <em>Candida albicans</em>. Chitin-supplemented cultures inhibited <em>C. albicans</em>; unsupplemented ones did not, under the conditions tested. That result left me with the question that drives my interests:</p>
-  <p class="question">How much antimicrobial potential stays hidden because we have not found the conditions that reveal it?</p>
-  <p><a class="btn" href="{{ '/research/' | relative_url }}" data-title="Research">Explore my research</a></p>
+  {% include msc-film.html %}
+
+  <h3 class="label" style="margin-top:28px">From the lab</h3>
+  <div class="grid" style="margin-top:10px">
+    {% include photo-tiles.html photos=site.data.msc_photos category="MSc research" %}
+  </div>
+  {% include lightbox.html %}
+
+  <h3 class="label" style="margin-top:28px">At a glance</h3>
+  <figure class="workflow" aria-label="Workflow of the MSc project" style="margin-top:10px">
+    <div class="lane">
+      <span class="lane-name label">Culture and assays</span>
+      <ol class="steps">
+        <li><strong>Isolates</strong><span><em>B. altitudinis</em>, <em>B. hwajinpoensis</em></span></li>
+        <li><strong>Culture ± chitin</strong><span>Supplemented vs unsupplemented</span></li>
+        <li><strong>Cell-free supernatant</strong><span>Extracellular fraction</span></li>
+        <li class="branch"><strong>Three read-outs</strong>
+          <span>Agar diffusion vs <em>C. albicans</em></span>
+          <span>Chitinase, colorimetric assay</span>
+          <span>VERO cell viability, MTT</span>
+        </li>
+      </ol>
+    </div>
+    <div class="lane">
+      <span class="lane-name label">Genome analysis</span>
+      <ol class="steps">
+        <li><strong>Genome sequences</strong><span>Both isolates</span></li>
+        <li><strong>antiSMASH</strong><span>Predicted biosynthetic gene clusters</span></li>
+        <li><strong>PCR</strong><span>NRPS-associated sequences</span></li>
+      </ol>
+    </div>
+    <div class="outcome">
+      <div><span class="label">Observed</span><p>Supernatants from chitin-supplemented cultures inhibited <em>C. albicans</em>. Comparable activity was not seen in the unsupplemented conditions tested.</p></div>
+      <div><span class="label">Not yet known</span><p>Which molecule is responsible, how it inhibits growth, and which biosynthetic pathway, if any, produces it.</p></div>
+    </div>
+    <figcaption class="caption">Workflow of the MSc project. The result is a condition-dependent phenotype, not an identified compound.</figcaption>
+  </figure>
+
+  <p class="col" style="margin-top:20px">The work also found evidence consistent with chitinolytic activity, and predicted biosynthetic potential in both genomes. Preliminary viability results on VERO cells gave a first indication of the preparations' effect on mammalian cells. The open questions above are what make this a starting point for further research.</p>
+  <div class="chips" style="margin-top:12px"><span class="chip">Marine microbiology</span><span class="chip">Bacillus</span><span class="chip">Chitin induction</span><span class="chip">Antifungal activity</span><span class="chip">Genome mining</span></div>
 </section>
 
 <section class="col">
-  <div class="sec-head"><h2>Current work</h2></div>
+  <div class="sec-head"><h2>Research interests</h2></div>
+  <div class="themes">
+    {% for t in site.data.themes %}
+    <article class="theme">
+      <span class="label">{{ t.short }}</span>
+      <h3>{{ t.question }}</h3>
+      {% for p in t.body %}<p>{{ p }}</p>{% endfor %}
+      {% if t.caution %}<p class="caution"><span class="label">Interpretation</span> {{ t.caution }}</p>{% endif %}
+    </article>
+    {% endfor %}
+  </div>
+  <p class="caption" style="margin-top:16px">These are research interests and proposed directions, not completed experiments.</p>
+</section>
+
+<section class="col" id="other-projects">
+  <div class="sec-head"><h2>Other projects</h2></div>
   <div class="entries">
-    {% for p in site.data.projects %}
+    {% assign projects = site.projects | sort: "order" %}
+    {% for p in projects %}
     <div class="entry">
-      <div class="when">{{ p.kind }}</div>
+      <div class="when">{{ p.when }}</div>
       <div>
-        <h3>{{ p.title }}{% if p.status %}<span class="status">{{ p.status }}</span>{% endif %}</h3>
-        {% if p.with %}<p class="sub">{{ p.with }}</p>{% endif %}
+        <h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+        <p class="sub">{{ p.org }}{% if p.role %} · {{ p.role }}{% endif %}</p>
         <p class="desc">{{ p.summary }}</p>
-        {% if p.tools %}<div class="chips">{% for t in p.tools %}<span class="chip">{{ t }}</span>{% endfor %}</div>{% endif %}
+        <p class="sub mono" style="font-size:.8rem;margin-top:6px"><a href="{{ p.url | relative_url }}" data-title="{{ p.title | escape }}">Project details and photos →</a></p>
+        {% if p.tags %}<div class="chips">{% for t in p.tags %}<span class="chip">{{ t }}</span>{% endfor %}</div>{% endif %}
       </div>
     </div>
     {% endfor %}
   </div>
 </section>
 
-<div class="two">
-  <section>
-    <div class="sec-head"><h2>Reading notes</h2><a href="{{ '/reading/' | relative_url }}">All notes →</a></div>
-    {% assign notes = site.notes | sort: "date" | reverse %}
-    {% if notes.size > 0 %}
-    <div class="entries compact">
-      {% for n in notes limit:3 %}
-      <div class="entry">
-        <div class="when">{{ n.date | date: "%b %Y" }}</div>
-        <div>
-          <h3><a href="{{ n.url | relative_url }}">{{ n.title }}</a></h3>
-          <p class="sub">{{ n.authors }}{% if n.year %} · {{ n.year }}{% endif %}</p>
-          <div class="chips">{% include grade.html level=n.evidence %}</div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-    {% else %}
-    <div class="empty"><strong>No reading notes yet</strong>Critical notes on papers I read will appear here.</div>
-    {% endif %}
-  </section>
-
-  <section>
-    <div class="sec-head"><h2>Blog</h2><a href="{{ '/blog/' | relative_url }}">All posts →</a></div>
-    {% if site.posts.size > 0 %}
-    <div class="entries compact">
-      {% for post in site.posts limit:3 %}
-      <div class="entry">
-        <div class="when">{{ post.date | date: "%b %Y" }}</div>
-        <div>
-          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-          <p class="sub">{{ post.excerpt | strip_html | truncatewords: 22 }}</p>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-    {% else %}
-    <div class="empty"><strong>No posts yet</strong>Writing on science, methods and research will appear here.</div>
-    {% endif %}
-  </section>
-</div>
-
-<section class="col">
-  <div class="sec-head"><h2>Publications and writing</h2><a href="{{ '/cv/' | relative_url }}">Full CV →</a></div>
-  {% include publications.html %}
+<section class="col stack">
+  <h2>Clinical diagnostics and experimental science</h2>
+  <p>I work as an Advanced Biomedical Support Worker in Clinical Blood Sciences, in a UKAS ISO 15189-accredited NHS laboratory. A diagnostic result has to be analytically reliable, traceable and reported in the right clinical context.</p>
+  <p>That shapes how I approach research. An interesting observation is a beginning. A conclusion needs controls, repeats and careful interpretation. My longer-term aim is translational microbiology that links environmental discovery to clinically relevant antimicrobial problems.</p>
 </section>
 
-{% include contact.html %}
+<section class="col">
+  <p class="caption" id="fn-taxon"><sup>1</sup> Since reclassified; LPSN now lists this species as <em>Pseudalkalibacillus hwajinpoensis</em> (Joshi et al. 2022). <a href="#ref-taxon">Back</a></p>
+</section>
 
 </div>
