@@ -1,0 +1,91 @@
+---
+layout: default
+title: Home
+---
+<div class="sections">
+
+<section class="hero-plate">
+  <div class="hero">
+    <span class="label">Environmental microbiology · Antimicrobial discovery · Microbial genomics</span>
+    <h1>{{ site.author.name }}</h1>
+    <p class="role">I am interested in how microbial environments shape antimicrobial activity, biosynthetic potential and the emergence of resistance.</p>
+    <p class="caption">Each disc on the plate opens a section of the site.</p>
+  </div>
+  {% include plate.html prefix="h" %}
+</section>
+
+<section class="stack col" id="about">
+  <h2>Some microbial chemistry only appears when the environment changes</h2>
+  <p class="lede">A nutrient runs short, a competitor appears, a new substrate arrives. Microorganisms respond by changing their metabolism and switching on quiet pathways, and molecules appear that standard culture would never show.</p>
+  <p>I hold an MSc in Applied Biotechnology (Distinction) from the University of Westminster and work in NHS Clinical Blood Sciences. My MSc research tested whether chitin changes the antifungal activity of marine sediment-derived bacteria against <em>Candida albicans</em>. Chitin-supplemented cultures inhibited <em>C. albicans</em>; unsupplemented ones did not, under the conditions tested. That result left me with the question that drives my interests:</p>
+  <p class="question">How much antimicrobial potential stays hidden because we have not found the conditions that reveal it?</p>
+  <p><a class="btn" href="{{ '/research/' | relative_url }}" data-title="Research">Explore my research</a></p>
+</section>
+
+<section class="col">
+  <div class="sec-head"><h2>Current work</h2></div>
+  <div class="entries">
+    {% for p in site.data.projects %}
+    <div class="entry">
+      <div class="when">{{ p.kind }}</div>
+      <div>
+        <h3>{{ p.title }}{% if p.status %}<span class="status">{{ p.status }}</span>{% endif %}</h3>
+        {% if p.with %}<p class="sub">{{ p.with }}</p>{% endif %}
+        <p class="desc">{{ p.summary }}</p>
+        {% if p.tools %}<div class="chips">{% for t in p.tools %}<span class="chip">{{ t }}</span>{% endfor %}</div>{% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<div class="two">
+  <section>
+    <div class="sec-head"><h2>Reading notes</h2><a href="{{ '/reading/' | relative_url }}">All notes →</a></div>
+    {% assign notes = site.notes | sort: "date" | reverse %}
+    {% if notes.size > 0 %}
+    <div class="entries compact">
+      {% for n in notes limit:3 %}
+      <div class="entry">
+        <div class="when">{{ n.date | date: "%b %Y" }}</div>
+        <div>
+          <h3><a href="{{ n.url | relative_url }}">{{ n.title }}</a></h3>
+          <p class="sub">{{ n.authors }}{% if n.year %} · {{ n.year }}{% endif %}</p>
+          <div class="chips">{% include grade.html level=n.evidence %}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty"><strong>No reading notes yet</strong>Critical notes on papers I read will appear here.</div>
+    {% endif %}
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Blog</h2><a href="{{ '/blog/' | relative_url }}">All posts →</a></div>
+    {% if site.posts.size > 0 %}
+    <div class="entries compact">
+      {% for post in site.posts limit:3 %}
+      <div class="entry">
+        <div class="when">{{ post.date | date: "%b %Y" }}</div>
+        <div>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <p class="sub">{{ post.excerpt | strip_html | truncatewords: 22 }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty"><strong>No posts yet</strong>Writing on science, methods and research will appear here.</div>
+    {% endif %}
+  </section>
+</div>
+
+<section class="col">
+  <div class="sec-head"><h2>Publications and writing</h2><a href="{{ '/cv/' | relative_url }}">Full CV →</a></div>
+  {% include publications.html %}
+</section>
+
+{% include contact.html %}
+
+</div>

@@ -1,0 +1,80 @@
+# ------------------------------------------------------------------
+#  Site settings. Edit the lines marked EDIT.
+# ------------------------------------------------------------------
+title: Subaiba Shafi Kadakkadan
+description: >-
+  Subaiba Shafi Kadakkadan: environmental microbiology, antimicrobial discovery and
+  microbial genomics. Ecological induction of antifungal activity in marine Bacillus.
+lang: en-GB
+
+# EDIT: your GitHub Pages address. For a repo named <username>.github.io keep baseurl "".
+url: "https://skadakkadan.github.io"
+baseurl: ""
+
+author:
+  name: Subaiba Shafi Kadakkadan
+  email: ss.kadakkadan@gmail.com
+  location: London, UK
+  # EDIT: fill these in when you have them. Leave "" to hide the link.
+  orcid: ""          # just the iD, e.g. 0000-0002-1234-5678
+  scholar: "https://scholar.google.com/citations?user=QY1G3VMAAAAJ"
+  github: ""         # GitHub username (left empty: profile has no code to show yet)
+  linkedin: "https://www.linkedin.com/in/subaiba"
+  researchgate: "https://www.researchgate.net/profile/Subaiba-Kadakkadan"
+
+# Tells Google these profiles belong to the same person as this site.
+social:
+  name: Subaiba Shafi Kadakkadan
+  links:
+    - "https://www.linkedin.com/in/subaiba"
+    - "https://www.researchgate.net/profile/Subaiba-Kadakkadan"
+    - "https://scholar.google.com/citations?user=QY1G3VMAAAAJ"
+
+# Set to false to turn off the walking-microbe animation between pages.
+walk_transition: true
+
+# CV download button on the CV page (file: assets/cv.pdf).
+cv_pdf: true
+
+# Voice-over for the MSc animation. Put scene-1.mp3 ... scene-8.mp3 in assets/audio/, then set film_audio: true.
+# Phone recordings are often .m4a: set film_audio_ext: m4a in that case.
+film_audio: false
+film_audio_ext: mp3
+
+# ------------------------------------------------------------------
+#  Structure (no need to edit)
+# ------------------------------------------------------------------
+markdown: kramdown
+kramdown:
+  input: GFM
+timezone: Europe/London
+permalink: /blog/:year/:month/:title/
+
+collections:
+  notes:
+    output: true
+    permalink: /reading/:title/
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+  - scope: { path: "", type: notes }
+    values: { layout: note }
+  - scope: { path: "", type: projects }
+    values: { layout: project }
+  - scope: { path: "" }
+    values: { layout: page }
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - templates/
+  - Gemfile
+  - Gemfile.lock
