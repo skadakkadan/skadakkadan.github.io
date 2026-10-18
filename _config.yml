@@ -22,6 +22,10 @@ author:
   linkedin: "https://www.linkedin.com/in/subaiba"
   researchgate: "https://www.researchgate.net/profile/Subaiba-Kadakkadan"
 
+# Google Search Console ownership check (output by jekyll-seo-tag).
+webmaster_verifications:
+  google: "2AzjogXgZH-LxLV2zvwU0gwXZ_I9_unA4XY9S2JsyJQ"
+
 # Tells Google these profiles belong to the same person as this site.
 social:
   name: Subaiba Shafi Kadakkadan
