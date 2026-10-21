@@ -1,9 +1,9 @@
 ---
 title: Helminth excretory–secretory products and experimental immunomodulation
 order: 5
-when: Undergraduate
+when: 2018 – 2021 · during BSc
 org: Parasitology Research Laboratory, PSMO College (University of Calicut), India
-role: Research exposure · Supervisor Dr P. A. Ahammed Shareef
+role: Voluntary research exposure · Supervisor Dr P. A. Ahammed Shareef
 summary: Research exposure to work on parasite-derived proteins as possible regulators of host inflammation, including the collagen-induced arthritis mouse model.
 link: ""
 link_label: ""
@@ -18,7 +18,7 @@ Parasitic helminths release excretory–secretory products (ESPs): a mixture of 
 
 ## My involvement
 
-I worked in the Parasitology Research Laboratory of Dr P. A. Ahammed Shareef at PSMO College. My role was **research exposure within the group**, not independently led experiments.
+Alongside my BSc (2018–2021), I volunteered in the Parasitology Research Laboratory of Dr P. A. Ahammed Shareef at PSMO College. My role was **research exposure within the group**, not independently led experiments.
 
 - The laboratory's work on helminth ESPs and their potential immunoregulatory properties.
 - The **collagen-induced arthritis (CIA) mouse model**, an established experimental model of immune-mediated inflammatory arthritis, used to evaluate candidate immunomodulatory interventions.
