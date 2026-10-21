@@ -11,6 +11,7 @@ titles:
   experience: Professional experience
   education: Education
   training: Training and certification
+  honours: Academic honours and scholarships
   engagement: Outreach and volunteering
 
 research:
@@ -26,6 +27,10 @@ research:
     role: Research Intern
     org: M. S. Swaminathan Research Foundation, Wayanad, India
     detail: Biodiversity surveys across nine agroforestry sites (128 plant and 101 bird species) and statistical analysis in R. Co-author of the resulting Biodiversity and Conservation paper.
+  - when: Undergraduate
+    role: Research exposure, Parasitology Research Laboratory
+    org: PSMO College, Tirurangadi (University of Calicut), India · Supervisor Dr P. A. Ahammed Shareef
+    detail: "Helminth excretory–secretory products (ESPs) and experimental immunomodulation: how parasite-derived proteins may regulate host inflammatory responses. Exposure to the collagen-induced arthritis (CIA) mouse model, an established model of immune-mediated inflammatory arthritis used to evaluate candidate immunomodulatory interventions, alongside the laboratory's work on liver-fluke ESPs and immunodiagnostics. Research exposure within the group, not independently led experiments."
 
 experience:
   - when: Apr 2024 – present
@@ -49,7 +54,7 @@ education:
   - when: 2018 – 2021
     role: BSc Zoology · First Class with Distinction
     org: PSMO College, Tirurangadi (University of Calicut), India
-    detail: "Research project: diversity of butterfly fauna in Malappuram District. Top 5% of graduating class; SIB Scholar full scholarship (2019–2021)."
+    detail: "Research project: diversity of butterfly fauna in Malappuram District. Top 5% of graduating class; SIB Scholar full scholarship for academic excellence in all three years (2018–2021)."
 
 training:
   - when: Oct 2025
@@ -86,6 +91,10 @@ engagement:
     role: Unit Secretary, National Service Scheme (NSS)
     org: PSMO College, Tirurangadi, India
     detail: One of four student unit secretaries for NSS Units 26 and 74, during the COVID-19 lockdown year.
+  - when: "2019"
+    role: Selected to represent Kerala, NSS National Volunteer Camp
+    org: National Service Scheme · PSMO College, Tirurangadi, India
+    detail: Selected in recognition of volunteering and community engagement. Unable to attend.
   - when: "2023"
     role: Poster presentation and public engagement, Genetics Society outreach programme
     org: Royal Institution, London
@@ -102,5 +111,27 @@ engagement:
     role: Mentoring and community education
     org: Kerala, India
     detail: Guiding rural students towards research careers in biotechnology and ecology; literacy and outreach programmes (Aksharasamudram, e-Nilambur).
+
+honours:
+  - when: 2018 – 2021
+    role: SIB Scholar scholarship
+    org: South Indian Bank
+    detail: Awarded for academic excellence in all three years of the BSc Zoology programme, University of Calicut.
+  - when: Postgraduate admissions
+    role: Selection through competitive Central University postgraduate entrance examinations
+    org: Central Universities in Delhi and Punjab, India
+    detail: Selected for postgraduate programmes in Zoology and in Environmental Science through national-level entrance examinations.
+  - when: "2018"
+    role: Professor Joseph Mundassery Scholarship
+    org: Higher Secondary (Plus Two)
+    detail: Academic excellence.
+  - when: "2018"
+    role: PM Foundation Scholarship
+    org: Higher Secondary (Plus Two)
+    detail: Academic excellence.
+  - when: "2016"
+    role: Professor Joseph Mundassery Scholarship
+    org: SSLC
+    detail: Academic excellence.
 
 referees: Available on request.

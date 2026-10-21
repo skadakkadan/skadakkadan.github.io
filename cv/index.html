@@ -13,7 +13,7 @@ eyebrow: CV
     </div>
   </section>
 
-  {% assign blocks = "research,experience,education,training,engagement" | split: "," %}
+  {% assign blocks = "research,experience,education,honours,training,engagement" | split: "," %}
   {% for key in blocks %}
   {% assign rows = cv[key] %}
   {% if rows and rows.size > 0 %}
